@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\ImgTools\ImgTools\bin\Debug\ImgTools.exe.config
+C:\Users\Administrator\Desktop\ImgTools\ImgTools\bin\Debug\ImgTools.exe
+C:\Users\Administrator\Desktop\ImgTools\ImgTools\bin\Debug\ImgTools.pdb
+C:\Users\Administrator\Desktop\ImgTools\ImgTools\obj\Debug\ImgTools.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\ImgTools\ImgTools\obj\Debug\ImgTools.Form1.resources
+C:\Users\Administrator\Desktop\ImgTools\ImgTools\obj\Debug\ImgTools.Properties.Resources.resources
+C:\Users\Administrator\Desktop\ImgTools\ImgTools\obj\Debug\ImgTools.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\ImgTools\ImgTools\obj\Debug\ImgTools.exe
+C:\Users\Administrator\Desktop\ImgTools\ImgTools\obj\Debug\ImgTools.pdb
