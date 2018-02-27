@@ -27,8 +27,8 @@ namespace ImgTools {
             FolderBrowserDialog fb = new FolderBrowserDialog();
             if (fb.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
                 Tools.ExportFolder(fb.SelectedPath, "D://output");
+                MessageBox.Show("完成");
             }
-            MessageBox.Show("完成");
         }
     }
 }

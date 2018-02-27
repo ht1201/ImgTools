@@ -10,3 +10,9 @@ C:\Users\Administrator\Desktop\ImgTools\ImgTools\obj\Debug\ImgTools.pdb
 F:\_Git\ImgTools\ImgTools\bin\Debug\ImgTools.exe.config
 F:\_Git\ImgTools\ImgTools\obj\Debug\ImgTools.exe
 F:\_Git\ImgTools\ImgTools\obj\Debug\ImgTools.pdb
+F:\_Git\ImgTools\ImgTools\bin\Debug\ImgTools.exe
+F:\_Git\ImgTools\ImgTools\bin\Debug\ImgTools.pdb
+F:\_Git\ImgTools\ImgTools\obj\Debug\ImgTools.csprojResolveAssemblyReference.cache
+F:\_Git\ImgTools\ImgTools\obj\Debug\ImgTools.Form1.resources
+F:\_Git\ImgTools\ImgTools\obj\Debug\ImgTools.Properties.Resources.resources
+F:\_Git\ImgTools\ImgTools\obj\Debug\ImgTools.csproj.GenerateResource.Cache
