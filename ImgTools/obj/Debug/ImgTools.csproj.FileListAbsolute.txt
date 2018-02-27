@@ -7,3 +7,6 @@ C:\Users\Administrator\Desktop\ImgTools\ImgTools\obj\Debug\ImgTools.Properties.R
 C:\Users\Administrator\Desktop\ImgTools\ImgTools\obj\Debug\ImgTools.csproj.GenerateResource.Cache
 C:\Users\Administrator\Desktop\ImgTools\ImgTools\obj\Debug\ImgTools.exe
 C:\Users\Administrator\Desktop\ImgTools\ImgTools\obj\Debug\ImgTools.pdb
+F:\_Git\ImgTools\ImgTools\bin\Debug\ImgTools.exe.config
+F:\_Git\ImgTools\ImgTools\obj\Debug\ImgTools.exe
+F:\_Git\ImgTools\ImgTools\obj\Debug\ImgTools.pdb
