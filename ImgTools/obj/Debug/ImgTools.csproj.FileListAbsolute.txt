@@ -16,3 +16,12 @@ F:\_Git\ImgTools\ImgTools\obj\Debug\ImgTools.csprojResolveAssemblyReference.cach
 F:\_Git\ImgTools\ImgTools\obj\Debug\ImgTools.Form1.resources
 F:\_Git\ImgTools\ImgTools\obj\Debug\ImgTools.Properties.Resources.resources
 F:\_Git\ImgTools\ImgTools\obj\Debug\ImgTools.csproj.GenerateResource.Cache
+F:\tools\ImgTools\ImgTools\bin\Debug\ImgTools.exe.config
+F:\tools\ImgTools\ImgTools\obj\Debug\ImgTools.exe
+F:\tools\ImgTools\ImgTools\obj\Debug\ImgTools.pdb
+F:\tools\ImgTools\ImgTools\bin\Debug\ImgTools.exe
+F:\tools\ImgTools\ImgTools\bin\Debug\ImgTools.pdb
+F:\tools\ImgTools\ImgTools\obj\Debug\ImgTools.csprojResolveAssemblyReference.cache
+F:\tools\ImgTools\ImgTools\obj\Debug\ImgTools.Form1.resources
+F:\tools\ImgTools\ImgTools\obj\Debug\ImgTools.Properties.Resources.resources
+F:\tools\ImgTools\ImgTools\obj\Debug\ImgTools.csproj.GenerateResource.Cache

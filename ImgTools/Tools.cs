@@ -65,13 +65,14 @@ namespace ImgTools {
             if ((y_max - y_min) % 2 == 1) {
                 y_max++;
             }
+            DirectoryInfo di = new DirectoryInfo(output);
             using (Bitmap img = new Bitmap(x_max - x_min, y_max - y_min)) {
                 using (Graphics g = Graphics.FromImage(img)) {
                     for (int i = 0; i < list.Count; i++){
                         g.Clear(Color.Transparent);
                         g.DrawImage(list[i], (width - list[i].Width) / 2 - x_min, (height - list[i].Height) / 2 - y_min);
                         g.Flush();
-                        img.Save(System.IO.Path.Combine(output, (i+1).ToString() + ".png"), ImageFormat.Png);
+                        img.Save(System.IO.Path.Combine(output, string.Format("{0}_{1}.png", di.Name, i + 1)), ImageFormat.Png);
                     }
                 }
             }
@@ -82,6 +83,23 @@ namespace ImgTools {
 
             foreach (var item in new DirectoryInfo(path).GetDirectories("*", SearchOption.TopDirectoryOnly)) {
                 ExportFolder(item.FullName, Path.Combine(output, item.Name));
+            }
+        }
+
+        public static void ChangeImgName(DirectoryInfo path) {
+            FileInfo[] files = path.GetFiles("*.png", SearchOption.TopDirectoryOnly);
+            List<string> path_list = new List<string>();
+            foreach (var item in files) {
+                path_list.Add(item.FullName);
+            }
+            path_list.Sort();
+            for (int i = 0; i < path_list.Count; i++) {
+                FileInfo file = new FileInfo(path_list[i]);
+                file.MoveTo(Path.Combine(file.DirectoryName, string.Format("{0}.png", i + 1)));
+            }
+
+            foreach (var item in path.GetDirectories("*", SearchOption.TopDirectoryOnly)) {
+                ChangeImgName(item);
             }
         }
     }
