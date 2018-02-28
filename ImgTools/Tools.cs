@@ -14,9 +14,6 @@ namespace ImgTools {
             if (path_list.Count == 0) {
                 return;
             }
-            if (Directory.Exists(output) == false) {
-                Directory.CreateDirectory(output);
-            }
             path_list.Sort();
             List<Image> list = new List<Image>();
             foreach (var item in path_list) {
@@ -66,13 +63,16 @@ namespace ImgTools {
                 y_max++;
             }
             DirectoryInfo di = new DirectoryInfo(output);
+            if(di.Parent.Exists == false) {
+                di.Parent.Create();
+            }
             using (Bitmap img = new Bitmap(x_max - x_min, y_max - y_min)) {
                 using (Graphics g = Graphics.FromImage(img)) {
                     for (int i = 0; i < list.Count; i++){
                         g.Clear(Color.Transparent);
                         g.DrawImage(list[i], (width - list[i].Width) / 2 - x_min, (height - list[i].Height) / 2 - y_min);
                         g.Flush();
-                        img.Save(System.IO.Path.Combine(output, string.Format("{0}_{1}.png", di.Name, i + 1)), ImageFormat.Png);
+                        img.Save(System.IO.Path.Combine(di.Parent.FullName, string.Format("{0}_{1}.png", di.Name, i + 1)), ImageFormat.Png);
                     }
                 }
             }
@@ -95,7 +95,8 @@ namespace ImgTools {
             path_list.Sort();
             for (int i = 0; i < path_list.Count; i++) {
                 FileInfo file = new FileInfo(path_list[i]);
-                file.MoveTo(Path.Combine(file.DirectoryName, string.Format("{0}.png", i + 1)));
+                string file_name = string.Format("{0}_{1}.png", file.Directory.Name, i + 1);
+                file.MoveTo(Path.Combine(file.DirectoryName, file_name));
             }
 
             foreach (var item in path.GetDirectories("*", SearchOption.TopDirectoryOnly)) {

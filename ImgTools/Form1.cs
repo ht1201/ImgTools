@@ -46,10 +46,10 @@ namespace ImgTools {
                 this.toolStripStatusLabel1.Text = "重命名操作完成";
             }
         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+        
+        private void linkLabel1_Click(object sender, EventArgs e) {
             FolderBrowserDialog fb = new FolderBrowserDialog();
-            if (fb.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+            if(fb.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
                 this.mSelectPath = fb.SelectedPath;
                 this.textBox1.Text = fb.SelectedPath;
                 this.RefershTreeView();
@@ -63,7 +63,7 @@ namespace ImgTools {
             foreach (var item in path.GetDirectories("*", SearchOption.TopDirectoryOnly)) {
                 TreeNode node = new TreeNode(item.Name, this.GetTree(item));
                 node.ToolTipText = item.FullName;
-                node.Tag = item.FullName;
+                node.Tag = null;
                 list.Add(node);
             }
 
@@ -79,7 +79,33 @@ namespace ImgTools {
         private void RefershTreeView() {
             this.treeView1.Nodes.Clear();
             this.treeView1.Nodes.AddRange(this.GetTree(new DirectoryInfo(this.mSelectPath)));
-            this.treeView1.ExpandAll();
+            //this.treeView1.ExpandAll();
+        }
+
+        private Image mImg;
+        private void label1_Paint(object sender, PaintEventArgs e) {
+            e.Graphics.Clear(Color.Transparent);
+            Pen pen = new Pen(new SolidBrush(Color.Gray));
+            e.Graphics.DrawLine(pen, new Point(this.label1.Width >> 1, 0), new Point(this.label1.Width >> 1, this.label1.Height));
+            e.Graphics.DrawLine(pen, new Point(0, this.label1.Height >> 1), new Point(this.label1.Width, this.label1.Height >> 1));
+            if(this.mImg != null) {
+                e.Graphics.DrawImage(this.mImg, (this.label1.Width - this.mImg.Width) >> 1, (this.label1.Height - this.mImg.Height) >> 1);
+            }
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e) {
+            TreeNode node = e.Node;
+            this.toolStripStatusLabel1.Text = node.ToolTipText;
+
+            if(this.mImg != null) {
+                this.mImg.Dispose();
+                this.mImg = null;
+            }
+
+            if(e.Node.Tag != null && e.Node.ToolTipText.EndsWith(".png")) {
+                this.mImg = Bitmap.FromFile(e.Node.ToolTipText);
+            }
+            this.label1.Refresh();
         }
     }
 }
